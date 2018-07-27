@@ -1,0 +1,20 @@
+<!--cinema.wxml-->
+<view class="films">
+  <view class="film-infos">
+    <image src="{{film.cover.origin}}"/>
+    <view class="film-info">
+      <view class="film-infos">影片简介</view>
+      <view class="film-director">导     演 : {{film.director}}</view>
+      <view class="film-actors">主     演 : 
+        <text wx:for="{{film.actors}}" wx:key="{{index}}">{{item.name}} | </text>
+      </view>
+      <view class="film-language">地区语言 : {{film.language}}</view>
+      <view class="film-category">类     型 : {{film.category}}</view>
+      <view class="film-premiereAt">上映日期 : {{film.premiereAt.date}}</view>
+      <view class="film-synopsis">{{film.synopsis}}</view>
+    </view>
+    <view class="go-buy">
+      <view>立即购票</view>
+    </view>
+  </view>
+</view>

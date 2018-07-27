@@ -1,0 +1,45 @@
+/**cinema.wxss**/
+.film-infos{
+    width:100%;
+}
+.film-infos image{
+    width:100%;
+    height:422rpx;
+}
+.film-infos film-info{
+    width:100%;
+}
+.film-infos .film-info view{
+    padding:0 40rpx;
+    font-size:24rpx;
+    color:#333;
+    height:50rpx;
+    line-height: 50rpx;
+}
+.film-infos .film-info view:first-child{
+    font-size:32rpx;
+    height:80rpx;
+    line-height: 80rpx;
+}
+.film-infos .film-info view:last-child{
+    font-size:24rpx;
+    height:30rpx;
+    line-height: 30rpx;
+}
+.go-buy{
+    position: fixed;
+    left: 0;
+    bottom: 35rpx;
+    width: 100%;
+    text-align: center;
+}
+.go-buy view{
+    font-size: 28rpx;
+    width: 312rpx;
+    height: 73rpx;
+    line-height: 72rpx;
+    background-color: #fe8233;
+    border-radius: 36rpx;
+    color: #fff;
+    margin:0 auto;
+}

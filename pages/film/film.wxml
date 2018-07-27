@@ -1,0 +1,18 @@
+<!--film.wxml-->
+<import  src="../template/film/filmTemplate" />
+
+<view class="film">
+  <!-- 滚动区域 -->
+  <scroll-view 
+      scroll-y 
+      lower-threshold="50"
+      style="height: 555px;" 
+      bindscrolltolower="getMore" 
+      >
+    <view class="header-nav">
+      <text class="{{filmType==='now-playing'?'active':''}}" bindtap="switchTab" data-type="now-playing">正在热映</text>
+      <text class="{{filmType==='coming-soon'?'active':''}}" bindtap="switchTab" data-type="coming-soon">即将热映</text>
+    </view>
+      <template is="film" data="{{films:filmsList}}"/>
+  </scroll-view>
+</view>

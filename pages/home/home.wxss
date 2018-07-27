@@ -1,0 +1,8 @@
+/**home.wxss**/
+@import "../template/home/swiper.wxss";
+@import "../template/home/homeFilms.wxss";
+
+.films{
+    padding-top:36rpx;
+    overflow: hidden;
+}

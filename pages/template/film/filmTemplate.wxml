@@ -1,0 +1,25 @@
+<template name="film">
+    <view class="films-list" wx:for="{{films}}" wx:key="{{index}}">
+      <view class="films-item" bindtap="getDetails" data-id="{{item.id}}">
+        <view class="films-img">
+          <image src="{{item.poster.origin}}"/>
+        </view>
+        <view class="films-info">
+          <view>
+            <text class="films-name">{{item.name}}</text>
+            <text class="films-logo">></text>
+            <text class="films-grade" wx:if="{{item.isNowPlaying}}">{{item.grade}}</text>
+          </view>
+          <view class="films-intro">{{item.intro}}</view>
+          <view wx:if="{{item.isNowPlaying}}">
+            <text class="films-count">{{item.cinemaCount}}家影院上映</text>
+            <text class="films-count">{{item.watchCount}}人购票</text>
+          </view>
+          <view class="coning-soon" wx:if="{{item.isComingSoon}}">
+            <text class="films-count ">{{item.premiereAt.date}}</text>
+            <text class="films-count">{{item.premiereAt.week}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+</template>

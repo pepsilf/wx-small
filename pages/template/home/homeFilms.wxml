@@ -1,0 +1,28 @@
+<template name="homeFilms">
+    <block wx:for="{{films}}" wx:key="{{index}}">
+        <view class="film-item" bindtap="getDetails" data-id="{{item.id}}">
+            <image src="{{item.cover.origin}}"/>
+            <!-- 正在热映 -->
+            <view class="film-info-ing" wx:if="{{item.isNowPlaying}}">
+                <view class="film-info">
+                    <view class="film-name">{{item.name}}</view>
+                    <view class="film-count">{{item.cinemaCount}}家影院上映 {{item.watchCount}}人购票</view>
+                </view>
+                <view class="film-grade">
+                    <view>{{item.grade}}</view>
+                </view>
+            </view>
+            <!-- 即将上映 -->
+            <view class="film-info-soon" wx:if="{{item.isComingSoon}}"> 
+                <view class="film-name">{{item.name}}</view>
+                <view class="film-data">{{item.premiereAt.date}}上映</view>
+            </view>
+        </view>
+    </block>
+    <view class="filmType" wx:if="{{films[0].isNowPlaying}}" bindtap="onclick" id="now-playing">
+        更多热映电影
+    </view>
+    <view class="filmType" wx:if="{{films[0].isComingSoon}}" bindtap="onclick" id="coming-soon">
+        更多即将上映电影
+    </view>
+</template>

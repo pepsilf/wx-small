@@ -1,0 +1,17 @@
+<!--home.wxml-->
+<import  src="../template/home/swipers" />
+<import  src="../template/home/homeFilms" />
+
+<view class="home">
+    <!-- 轮播 -->
+    <template is="swipers" data="{{imgUrls}}"/>
+    <view class="films" >
+        <!-- 正在热映影片 -->
+        <template is="homeFilms" data="{{films:filmListIng}}"/>
+        <view class="dividing-line">
+            <view class="upcoming" bindtap="onclick">即将上映</view>
+        </view>
+        <!-- 即将上映影片 -->
+        <template is="homeFilms" data="{{films:filmListSoon}}"/>
+    </view>
+</view>
